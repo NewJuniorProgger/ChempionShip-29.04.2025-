@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matule/router.dart';
+import 'package:matule/core/router/router.dart';
 
 void main() {
   runApp(const App());
@@ -16,8 +16,7 @@ class App extends StatelessWidget {
       debugShowMaterialGrid: false,
       showSemanticsDebugger: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-      ),
+      theme: ThemeData(),
       routerConfig: RouterConfigGo.router,
     );
   }

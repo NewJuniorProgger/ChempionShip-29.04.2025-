@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:matule/home_screen.dart';
-import 'package:matule/notification_screen.dart';
-import 'package:matule/root_screen.dart';
+import 'package:matule/layers/domain/presentation/screens/home_screen.dart';
+import 'package:matule/layers/domain/presentation/screens/notification_screen.dart';
+import 'package:matule/layers/domain/presentation/screens/root_screen.dart';
 
 class RouterConfigGo {
   static GoRouter get router => GoRouter(
@@ -25,7 +25,7 @@ class RouterConfigGo {
               GoRoute(
                 path: '/notification',
                 builder: (context, state) => NotificationScreen(),
-                name: 'notification'
+                name: 'notification',
               ),
             ],
           ),
