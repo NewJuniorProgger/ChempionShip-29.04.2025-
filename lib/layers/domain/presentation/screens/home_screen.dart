@@ -11,10 +11,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: BrandColors.red,
-      padding: EdgeInsets.all(20),
-      child: Column(children: [FlutterLogo()]),
+    return Center(
+      child: Container(
+        child: Center(),
+        width: 335,
+        height: 50,
+        decoration: BoxDecoration(
+          color: BrandColors.accent,
+          borderRadius: BorderRadius.circular(45),
+        ),
+      ),
     );
   }
 }
