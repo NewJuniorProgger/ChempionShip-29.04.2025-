@@ -36,6 +36,7 @@ dependencies:
   go_router: ^15.1.1
   get: ^4.7.2
   easy_localization: ^3.0.7
+  flutter_router: ^1.2.0
 
 
 dev_dependencies:
