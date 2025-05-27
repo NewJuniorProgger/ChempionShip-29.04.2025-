@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:matule/core/brand/Brand.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,6 +9,8 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+bool invise = false;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -23,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               "Привет!",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 28),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
             ),
             Text(
               "Заполните свои данные или продолжите \n через социальные медиа",
@@ -32,29 +35,54 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             SizedBox(height: 52),
-            Text("email"),
+            Text(
+              "email",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+            ),
             TextField(
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: "",
+                labelStyle: TextStyle(fontSize: 15),
+                labelText: "abc@gmail.com",
                 border: InputBorder.none,
-                hintText: "abc@gmail.com",
+                floatingLabelBehavior: FloatingLabelBehavior.never,
               ),
             ),
 
             SizedBox(height: 50),
-            Text("password"),
+            Text(
+              "password",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+            ),
             TextField(
+              obscureText: invise,
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
-                labelText: "",
+                labelStyle: TextStyle(fontSize: 15),
+                labelText: "pass_2444",
                 border: InputBorder.none,
-                hintText: "Pass_2444",
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      invise = !invise;
+                    });
+                  },
+                  icon: Icon(
+                    invise
+                        ? Icons.remove_red_eye_outlined
+                        : Icons.remove_red_eye,
+                  ),
+                ),
               ),
             ),
 
             SizedBox(height: 65),
             CupertinoButton(
               color: BrandColors.accent,
-              onPressed: () {},
+              onPressed: () {
+                context.go("/notification");
+              },
               child: Text(
                 "Войти",
                 style: TextStyle(color: BrandColors.subTextLight),
