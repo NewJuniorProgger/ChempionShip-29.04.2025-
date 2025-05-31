@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:matule/layers/presentation/screens/home_screen.dart';
 import 'package:matule/core/brand/Brand.dart';
+import 'package:matule/layers/presentation/screens/CardScreen.dart';
 
 class Outdoor extends StatefulWidget {
   const Outdoor({super.key});
@@ -40,7 +41,7 @@ class _OutdoorState extends State<Outdoor> {
               ),
               Text(
                 'OutDoor',
-                style: GoogleFonts.roboto(
+                style: TextStyle(
                   fontSize: 20,
                   color: BrandColors.text,
                   fontWeight: FontWeight.w600,
@@ -50,30 +51,30 @@ class _OutdoorState extends State<Outdoor> {
             ],
           ),
           SizedBox(height: 20),
-          // SizedBox(
-          //   height: 50,
-          //   child: ListView(
-          //     scrollDirection: Axis.horizontal,
-          //     padding: EdgeInsets.symmetric(horizontal: 20),
-          //     children: [
-          //       Container(
-          //         width: 150,
-          //         margin: EdgeInsets.only(right: 12),
-          //         padding: EdgeInsets.symmetric(horizontal: 24),
-          //         decoration: BoxDecoration(
-          //           color: BrandColors.block,
-          //           borderRadius: BorderRadius.circular(12),
-          //         ),
-          //         alignment: Alignment.center,
-          //         child: Text(
-          //           context.tr('see_all'),
-          //           style: GoogleFonts.roboto(
-          //             fontSize: 15,
-          //             color: BrandColors.text,
-          //             fontWeight: FontWeight.w700,
-          //           ),
-          //         ),
-          //       ),
+          SizedBox(
+            height: 50,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              children: [
+                Container(
+                  width: 150,
+                  margin: EdgeInsets.only(right: 12),
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  decoration: BoxDecoration(
+                    color: BrandColors.block,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    context.tr('see_all'),
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: BrandColors.text,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
 
                 Container(
                   width: 150,
@@ -89,12 +90,12 @@ class _OutdoorState extends State<Outdoor> {
                         () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => OutdoorScreen(),
+                            builder: (context) => Outdoor(),
                           ),
                         ),
                     child: Text(
                       'Outdoor',
-                      style: GoogleFonts.roboto(
+                      style: TextStyle(
                         fontSize: 15,
                         color: BrandColors.block,
                         fontWeight: FontWeight.w700,
@@ -103,39 +104,39 @@ class _OutdoorState extends State<Outdoor> {
                   ),
                 ),
 
-//                 Container(
-//                   width: 150,
-//                   padding: EdgeInsets.symmetric(horizontal: 24),
-//                   decoration: BoxDecoration(
-//                     color: BrandColors.block,
-//                     borderRadius: BorderRadius.circular(12),
-//                   ),
-//                   alignment: Alignment.center,
-//                   child: Text(
-//                     'Tennis',
-//                     style: GoogleFonts.roboto(
-//                       fontSize: 15,
-//                       color: BrandColors.text,
-//                       fontWeight: FontWeight.w700,
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           SizedBox(height: 20),
-//           Expanded(
-//             child: GridView.count(
-//               crossAxisCount: 2,
-//               childAspectRatio: 0.9,
-//               crossAxisSpacing: 10,
-//               mainAxisSpacing: 10,
-//               padding: EdgeInsets.all(8),
-//               children: List.generate(16, (index) => CardScreen()),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+                Container(
+                  width: 150,
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  decoration: BoxDecoration(
+                    color: BrandColors.block,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Tennis',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: BrandColors.text,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              childAspectRatio: 0.9,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              padding: EdgeInsets.all(8),
+              children: List.generate(16, (index) => CardScreen()),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
