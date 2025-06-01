@@ -1,6 +1,1 @@
 NewProject
-
-
-
-фавы
-FirstPR
