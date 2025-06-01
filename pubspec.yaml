@@ -18,6 +18,7 @@ dependencies:
   get: ^4.7.2
   easy_localization: ^3.0.7
   flutter_router: ^1.2.0
+  flutter_zoom_drawer: ^3.2.0
 
 
 dev_dependencies:

@@ -9,10 +9,24 @@ import 'package:matule/layers/presentation/screens/OutDoor.dart';
 import 'package:matule/layers/presentation/screens/CardScreen.dart';
 import 'package:matule/layers/presentation/screens/search.dart';
 import 'package:matule/layers/presentation/screens/Setting_screen.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:matule/layers/presentation/screens/buildscreen.dart';
+import 'package:matule/layers/presentation/screens/signinscreen.dart';
+import 'package:matule/layers/presentation/shared/ui/createUser.dart';
+import 'package:matule/layers/presentation/screens/FagotPasswordScreen.dart';
 
 class RouterConfigGo {
-  static GoRouter get router => GoRouter(
+  final GoRouter router = GoRouter(
+    initialLocation: '/signin',
     routes: [
+      GoRoute(path: '/signin', builder: (context, state) => SigninScreen()),
+      GoRoute(
+        path: '/pass',
+        builder: (context, state) => ForgotPasswordsrceen(),
+      ),
+      GoRoute(path: '/create', builder: (context, state) => CreateUser()),
+      
+
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return ZoomDrawer(
@@ -22,7 +36,6 @@ class RouterConfigGo {
             borderRadius: 24.0,
             showShadow: false,
             angle: -12.0,
-            slideWidth: MediaQuery.of(context).size.width * 0.65,
           );
         },
         branches: [
