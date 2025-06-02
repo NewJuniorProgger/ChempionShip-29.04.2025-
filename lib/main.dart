@@ -15,9 +15,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
       showSemanticsDebugger: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      ),
+      title: '/',
+      theme: ThemeData(),
       routerConfig: RouterConfigGo.router,
     );
   }

@@ -16,7 +16,7 @@ import 'package:matule/layers/presentation/shared/ui/createUser.dart';
 import 'package:matule/layers/presentation/screens/FagotPasswordScreen.dart';
 
 class RouterConfigGo {
-  final GoRouter router = GoRouter(
+  static GoRouter get router => GoRouter(
     initialLocation: '/signin',
     routes: [
       GoRoute(path: '/signin', builder: (context, state) => SigninScreen()),
@@ -25,7 +25,6 @@ class RouterConfigGo {
         builder: (context, state) => ForgotPasswordsrceen(),
       ),
       GoRoute(path: '/create', builder: (context, state) => CreateUser()),
-      
 
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -42,10 +41,7 @@ class RouterConfigGo {
           StatefulShellBranch(
             routes: [
               GoRoute(path: '/home', builder: (context, state) => HomeScreen()),
-              GoRoute(
-                path: '/outdoor',
-                builder: (context, state) => Outdoor(),
-              ),
+              GoRoute(path: '/outdoor', builder: (context, state) => Outdoor()),
             ],
           ),
           StatefulShellBranch(
@@ -58,10 +54,7 @@ class RouterConfigGo {
           ),
           StatefulShellBranch(
             routes: [
-              GoRoute(
-                path: '/cart',
-                builder: (context, state) => CardScreen(),
-              ),
+              GoRoute(path: '/cart', builder: (context, state) => CardScreen()),
             ],
           ),
           StatefulShellBranch(
